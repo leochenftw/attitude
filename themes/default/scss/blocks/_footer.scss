@@ -1,0 +1,45 @@
+.footer {
+    .content {
+        a {
+            @include transition(all ease-in-out 0.2s);
+        }
+
+        a.title {
+            &.is-1 {
+                text-decoration: underline;
+                @include mobile {
+                    font-size: 24px;
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $turquoise;
+            }
+        }
+
+        .social-networks {
+            max-width: 480px;
+            margin: 60px auto;
+            .columns {
+                @include mobile {
+                    @include display-flex;
+                }
+            }
+            a.icon {
+                color: $grey-darker;
+                font-size: 32px;
+                width: auto;
+                height: auto;
+                .fa {
+                    line-height: 1;
+                }
+
+                &:focus,
+                &:hover {
+                    color: $turquoise;
+                }
+            }
+        }
+    }
+}

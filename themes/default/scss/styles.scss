@@ -1,0 +1,137 @@
+// /**
+//  * @file styles.scss
+//  *
+//  * Main stylesheet.
+//  * */
+//
+// /**
+//  * Import external libraries.
+//  * */
+@import 'compass';
+// @import 'susy';
+// @import 'breakpoint';
+// @import 'h5bp';
+//
+// /**
+//  * import config.
+//  * */
+// @import 'config/variables-1200px',
+//         'config/colours',
+//         'config/mixins',
+//         'config/grid-1200px',
+//         'config/fonts',
+//         'config/sprite',
+//         'config/modifiers',
+//         'config/typography';
+//
+// /**
+//  * Import Sprite sheet.
+//  * */
+// // @include retina-sprite-add(spritesheet, 'sprites/*.png', 'retina_sprites/*.png');
+//
+// @include h5bp-normalize;
+// @include h5bp-base-styles;
+// @include h5bp-helpers;
+// @include h5bp-media;
+//
+// /**
+//  * Blocks.
+//  * */
+//
+// /**
+//  * Plugins.
+//  * */
+//
+// /**
+//  * Pages.
+//  * */
+//
+// /**
+//  * Element overrides.
+//  * */
+// html {
+//     @include box-sizing(border-box);
+// }
+//
+// *,
+// *:before,
+// *:after {
+//   @include box-sizing(inherit);
+// }
+//
+// /**
+//  * Generic breakpoint.
+//  * */
+// @include breakpoint($container) {
+//     img {
+//         max-width: 100%;
+//         height: auto;
+//     }
+// }
+@import "font-awesome-compass";
+@import "font-awesome";
+
+$turquoise: #E57E25;
+$grey-dark: #95a5a6;
+
+@import "bulma/bulma";
+@import 'config/ss-shim',
+        'config/sprite';
+@include retina-sprite-add(spritesheet, 'sprites/*.png', 'retina_sprites/*.png');
+
+@import 'blocks/lightbox',
+        'blocks/header',
+        'blocks/hero',
+        'blocks/section',
+        'blocks/footer';
+
+@import 'components/divider',
+        'components/linker';
+
+html {
+    background-color: whitesmoke;
+    body {
+        background-color: whitesmoke;
+        #main {
+            background-color: white;
+        }
+    }
+}
+
+svg.bigTriangleColor {
+    pointer-events: none;
+    background: $white;
+    display: block;
+    @include mobile {
+        height: 51px;
+    }
+
+    .page-Security & {
+        display: none;
+    }
+
+    path {
+        fill: whitesmoke;
+        stroke: whitesmoke;
+        stroke-width: 4;
+    }
+}
+
+.sitting-triangles {
+    font-size: 0;
+    svg.sitting-triangle {
+        display: inline-block;
+        fill: white;
+        stroke: white;
+        stroke-width: 0;
+    }
+}
+
+.slide-up {
+    @include transform(translateY(150px));
+    @include transition(all ease 0.8s);
+
+    &.shown {
+        @include transform(translateY(0));
+    }
+}

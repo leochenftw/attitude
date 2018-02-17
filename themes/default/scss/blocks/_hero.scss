@@ -1,0 +1,85 @@
+.hero {
+    position: relative;
+    height: calc(100vh + 161px);
+    @include mobile {
+        height: 100vh;
+    }
+    background-size: cover;
+    background-repeat: no-repeat;
+    .hero-body {
+        position: relative;
+        &.container {
+            width: 100%;
+            height: 100%;
+            .columns {
+                @include align-items(flex-end);
+                height: 75%;
+                @include mobile {
+                    @include display-flex;
+                    height: 95%;
+                }
+            }
+            .title {
+                line-height: 1;
+                font-size: 64px;
+                text-transform: uppercase;
+                // text-shadow: 0 0 5px #fff;
+                color: #fff;
+                margin-bottom: 1rem;
+                @include mobile {
+                    // color: #fff;
+                    text-shadow: 0 0 5px $grey-darker;
+                }
+                span {
+                    &.is-slim {
+                        font-size: 106px;
+                        font-weight: lighter;
+                    }
+                    &.is-bold {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .subtitle {
+                margin-top: 10px;
+                a {
+                    text-shadow: 0 0 5px #fff;
+                    color: $grey-darker;
+                    @include mobile {
+                        color: #fff;
+                        text-shadow: 0 0 5px $grey-darker;
+                        .icon {
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .read-more {
+            @include mobile {
+                display: none;
+            }
+            margin-top: 40px;
+            .icon {
+                color: rgba(255,255,255,0.6);
+                font-size: 48px;
+            }
+        }
+    }
+
+    .sitting-triangles {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        bottom: 0;
+        height: 161px;
+        left: 0;
+        @include mobile {
+            height: 51px;
+            svg.sitting-triangle {
+                height: calc(100% + 2px);
+            }
+        }
+    }
+}

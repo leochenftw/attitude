@@ -1,0 +1,9 @@
+---
+Name: apiroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'works/$slug': 'WorksController'
+    'projects/$slug': 'ProjectsController'
+    'api/v/1/works/$slug': 'WorkAPI'
